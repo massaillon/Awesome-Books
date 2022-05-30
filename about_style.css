@@ -1,0 +1,764 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,700;1,800;1,900&display=swap");
+@import url('http://fonts.cdnfonts.com/css/cocogoose');
+
+/* The Mobile style */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+}
+
+/* Top bar section styling */
+
+.top-bar {
+  display: none;
+}
+
+/* Header Section styling */
+
+.header-image {
+  background-color: #f9f9f9;
+  opacity: 0.9;
+}
+
+.home-header {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  left: 0;
+  right: 0;
+  background-image: url(./images/Mobile/About-bg.jpg);
+  background-repeat: no-repeat;
+  z-index: 9;
+}
+
+.navbar {
+  position: absolute;
+  width: 100%;
+  z-index: 99;
+  height: 100%;
+}
+
+.logo {
+  display: none;
+}
+
+.hamburger {
+  display: block;
+  margin-left: 25px;
+  position: absolute;
+  z-index: 99;
+  margin-top: 10px;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px 0;
+  transition: all 0.3s ease-in-out;
+  background-color: #272a31;
+}
+
+.hamburger.active .bar:nth-child(2) {
+  opacity: 0;
+  background-color: white;
+}
+
+.hamburger.active .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+  background-color: white;
+}
+
+.hamburger.active .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+  background-color: white;
+}
+
+.hide {
+  display: none !important;
+}
+
+.nav-menu {
+  flex-direction: column;
+  background-color: rgba(236, 82, 66, 0.8);
+  backdrop-filter: blur(8px);
+  width: 100%;
+  transition: 0.3s;
+  min-height: 650px;
+  list-style-type: none;
+  padding: 65px;
+}
+
+.nav-link {
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-size: 32px;
+  left: 53px;
+  margin-top: 106px;
+  text-decoration: none;
+}
+
+.ask-quote {
+  display: none !important;
+}
+
+/* Vector background */
+
+.chest-bg-vector {
+  background-image: url(./images/Mobile/Chest-bg-vector.png);
+  width: 92.67px;
+  transform: rotate(86.86deg);
+  padding-top: 111px;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 220px;
+  top: 8px;
+}
+
+.chest-bg-vector:hover {
+  scale: 1.2;
+}
+
+.C-bg-vector {
+  background-image: url(./images/Mobile/C-bg-vector.png);
+  width: 92.67px;
+  transform: rotate(3.86deg);
+  padding-top: 111px;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 51px;
+  top: 51px;
+}
+
+.C-bg-vector:hover {
+  scale: 1.2;
+}
+
+.Cross-bg-vector {
+  background-image: url(./images/Mobile/cross-bg-vector.png);
+  width: 92.67px;
+  transform: rotate(86.86deg);
+  padding-top: 111px;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 302px;
+  top: 52px;
+}
+
+.Cross-bg-vector:hover {
+  scale: 1.2;
+}
+
+.cercle-bg-vector {
+  background-image: url(./images/Mobile/Cercle-bg-vector.png);
+  width: 92.67px;
+  transform: rotate(86.86deg);
+  padding-top: 111px;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 20px;
+  top: 309px;
+}
+
+.dollar-bg-vector {
+  display: none;
+  background-image: url(./images/Mobile/dollar-bg-vector.png);
+  width: 92.67px;
+  transform: rotate(189.86deg);
+  padding-top: 111px;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 544px;
+  left: 0;
+}
+
+/* Headline Section styling */
+
+.headline-container {
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  margin-top: 130px;
+  margin-bottom: -11px;
+}
+
+.headline-container h1 {
+  background-image: url(./images/Mobile/Red-Orange-bg.png);
+  font-family: 'cocogoose', sans-serif;
+  font-size: 2rem;
+  line-height: 1.5;
+  text-transform: uppercase;
+  background-repeat: no-repeat;
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-position: 20% 20%;
+  background-size: cover;
+  color: transparent;
+  max-width: 900px;
+  align-self: center;
+  margin-left: 15px;
+  margin-top: 8px;
+  z-index: 9;
+}
+
+.headline-paragraph-container {
+  display: flex;
+  border: 2px solid white;
+  margin-top: 90px;
+  align-self: center;
+  padding: 10px;
+  width: 384px;
+  background-color: #f9f9f9;
+  z-index: 9;
+}
+
+.headline-paragraph-container p {
+  font-family: "Poppins", sans-serif;
+  line-height: 25px;
+  color: #272a31;
+}
+
+.headline-container h3 {
+  font-family: 'cocogose', sans-serif;
+  margin-top: 25px;
+  margin-bottom: 40px;
+  align-self: center;
+  font-size: 18px;
+  color: #272a31;
+}
+
+/* Main section Styling */
+
+/* About us Styling */
+
+.About-us-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 2px solid rgba(222, 222, 222, 1);
+}
+
+.section-title {
+  display: flex;
+  flex: 1;
+  color: #272a31;
+  align-self: center;
+  font-family: 'cocogose', sans-serif;
+  margin-top: 15px;
+  font-size: 20px;
+  justify-content: center;
+}
+
+.section-title-underline-bar {
+  width: 46px;
+  height: 2px;
+  align-self: center;
+  justify-content: center;
+  background-color: rgba(236, 82, 66, 1);
+  margin-top: 10px;
+}
+
+.About-us-container p {
+  font-family: "Poppins", sans-serif;
+  color: #272a31;
+  text-align: center;
+  font-size: 12px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 16px;
+}
+
+.about-us-logo {
+  font-size: 28px;
+  font-family: "Poppins", sans-serif;
+  color: rgba(236, 82, 66, 1);
+  border: 1px solid rgba(222, 222, 222, 1);
+  padding-right: 60px;
+  padding-left: 60px;
+  display: flex;
+  align-items: center;
+  height: 170px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 30px;
+  margin-bottom: 45px;
+  font-weight: 700;
+}
+
+/* Project Completed Styling */
+
+.project-done-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.project-done-container p {
+  font-family: "Poppins", sans-serif;
+  color: #272a31;
+  text-align: center;
+  font-size: 12px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 16px;
+}
+
+.project-done-1 {
+  background: url(./images/Mobile/project-3.png);
+  background-repeat: repeat;
+  background-repeat: no-repeat;
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 212px;
+  width: 350px;
+  margin-top: 48px;
+}
+
+.project-done-2 {
+  background: url(./images/Mobile/project-2.png);
+  background-repeat: repeat;
+  background-repeat: no-repeat;
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 212px;
+  width: 350px;
+  margin-top: 48px;
+  margin-bottom: 37px;
+}
+
+.project-done-1 p {
+  font-family: 'cocogose', sans-serif;
+  font-size: 25px;
+  font-weight: 500;
+  color: white;
+  z-index: 9;
+}
+
+.project-done-2 p {
+  font-family: 'cocogose', sans-serif;
+  font-size: 25px;
+  font-weight: 500;
+  color: white;
+  z-index: 9;
+}
+
+.project-done-1 .color-overlay {
+  height: 212px;
+  width: 350px;
+  background: rgba(156, 44, 31, 0.7);
+  position: absolute;
+}
+
+.project-done-2 .color-overlay {
+  height: 212px;
+  width: 350px;
+  background: rgba(156, 44, 31, 0.7);
+  position: absolute;
+}
+
+/* Partner Section Styling */
+
+.partner-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(60, 63, 69, 1);
+  font-family: 'cocogose', sans-serif;
+  width: 100%;
+  height: 100%;
+}
+
+.partner-container .section-title {
+  color: white;
+}
+
+.partner-container .section-title-underline-bar {
+  width: 46px;
+  height: 2px;
+  align-self: center;
+  background-color: rgba(236, 82, 66, 1);
+  margin-top: 10px;
+}
+
+.partner-blocks {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
+.partner-block-1 {
+  display: flex;
+  width: 100%;
+  height: 56px;
+  margin-top: 12px;
+  margin-left: 30px;
+  align-self: center;
+  margin-right: 13px;
+}
+
+.partner-block-1 .partner-client-1 {
+  flex: 1;
+  display: flex;
+  background-image: url(./images/Mobile/mozilla-logo.png);
+  background-repeat: no-repeat;
+}
+
+.partner-block-1 .partner-client-2 {
+  flex: 1;
+  display: flex;
+  background-image: url(./images/Mobile/NAVER-logo.png);
+  background-repeat: no-repeat;
+}
+
+.partner-block-1 .partner-client-3 {
+  flex: 1;
+  display: flex;
+  background-image: url(./images/Mobile/airbnb-logo-N.png);
+  background-repeat: no-repeat;
+}
+
+.partner-block-2 {
+  display: flex;
+  width: 100%;
+  height: 104px;
+  margin-top: 12px;
+  margin-left: 102px;
+  align-self: center;
+}
+
+.partner-block-2 .partner-client-1 {
+  flex: 1;
+  display: flex;
+  background-image: url(./images/Mobile/HPMK-logo.png);
+  background-repeat: no-repeat;
+  opacity: 0.7;
+}
+
+.partner-block-2 .partner-client-2 {
+  flex: 1;
+  display: flex;
+  background-image: url(./images/Mobile/NAVER-logo.png);
+  background-repeat: no-repeat;
+}
+
+/* The Footer section Sytling */
+
+.footer-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.footer-logo {
+  color: rgba(236, 82, 66, 1);
+  font-size: 1rem;
+  font-family: 'cocogose', sans-serif;
+  width: 200;
+  padding-top: 30px;
+  padding-bottom: 20px;
+  margin-left: 70px;
+  text-align: center;
+}
+
+.copyright {
+  font-family: 'cocogose', sans-serif;
+  font-size: 11px;
+  padding-top: 30px;
+  padding-bottom: 20px;
+  margin-left: 35px;
+  text-align: center;
+  margin-right: 40px;
+  color: rgba(60, 63, 69, 1);
+}
+
+/* media Queries for desktop version */
+
+@media all and (min-width: 768px) {
+  /* Top bar section styling */
+
+  .top-bar {
+    display: flex;
+    background-color: rgba(60, 63, 69, 1);
+    justify-content: end;
+    align-items: center;
+    width: 100%;
+    height: 30px;
+    padding-right: 100px;
+  }
+
+  .top-bar-element-container {
+    display: flex;
+    gap: 10px;
+    font-family: 'cocogose', sans-serif;
+  }
+
+  .top-bar-element-container a {
+    font-size: 13px;
+    text-decoration: none;
+    list-style-type: none;
+    color: white;
+  }
+
+  /* Header Section styling */
+
+  .home-header {
+    background-image: url(./images/Mobile/About-bg.png);
+    background-repeat: no-repeat;
+  }
+
+  .headline-container {
+    margin-top: 166px;
+    margin-bottom: 65px;
+  }
+
+  .headline-container h1 {
+    font-size: 40px;
+    text-align: center;
+    line-height: 1.5;
+  }
+
+  .headline-paragraph-container {
+    width: 650px;
+    margin-top: 27px;
+    opacity: 1;
+  }
+
+  .headline-container h3 {
+    margin-top: 33px;
+    z-index: 15;
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  /* Navigation Bar section styling */
+
+  .navbar {
+    display: flex;
+    margin-left: 0;
+    margin-top: 0;
+    position: absolute;
+    background-color: white;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 75px;
+    z-index: 15;
+    box-shadow: 0 5px 6px rgba(0, 0, 0, 0.2);
+  }
+
+  .logo {
+    background-image: url(./images/Mobile/orange-background.png);
+    display: flex;
+    text-decoration: none;
+    color: transparent;
+    font-family: 'cocogoose', sans-serif;
+    font-size: 1rem;
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+
+  .nav-menu {
+    display: flex !important;
+    flex-direction: row;
+    align-items: center;
+    gap: 40px;
+    list-style: none;
+    font-family: "Poppins", sans-serif;
+    margin-top: 0;
+    justify-content: center;
+    height: auto;
+    width: auto;
+    background-color: transparent;
+    margin-right: -184px;
+    backdrop-filter: blur(0);
+  }
+
+  .nav-link {
+    text-decoration: none;
+    color: rgba(60, 63, 69, 0.8);
+    font-size: 13px;
+  }
+
+  .nav-link:hover {
+    color: rgba(236, 82, 66, 1);
+  }
+
+  .nav-link:active {
+    color: rgba(236, 82, 66, 1);
+  }
+
+  .nav-item {
+    margin: 16px 0;
+  }
+
+  /* Ask quote button */
+
+  .ask-quote {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 40px;
+    border: 5px solid rgba(236, 82, 66, 1);
+  }
+
+  nav .ask-quote {
+    background-color: white;
+    font-family: 'cocogoose', sans-serif;
+    color: rgba(236, 82, 66, 1);
+    cursor: pointer;
+  }
+
+  nav .ask-quote:hover {
+    background-color: rgba(236, 82, 66, 1);
+    color: white;
+    border: 5px solid rgba(241, 166, 24, 1);
+  }
+
+  nav .ask-quote:hover:hover {
+    scale: 1.2;
+    transition: all 500ms ease-in-out;
+  }
+
+  .ask-quote a {
+    font-size: 13px;
+    text-decoration: none;
+    list-style-type: none;
+    color: rgba(236, 82, 66, 1);
+    font-family: 'cocogoose', sans-serif;
+  }
+
+  .ask-quote a:hover {
+    color: white;
+  }
+
+  /* Vector background */
+
+  .chest-bg-vector {
+    left: 1000px;
+    top: 158px;
+  }
+
+  .chest-bg-vector:hover {
+    scale: 1.2;
+  }
+
+  .C-bg-vector {
+    left: 51px;
+    top: 51px;
+  }
+
+  .C-bg-vector:hover {
+    scale: 1.2;
+  }
+
+  .Cross-bg-vector {
+    left: 302px;
+    top: 93px;
+  }
+
+  .Cross-bg-vector:hover {
+    scale: 1.2;
+  }
+
+  .cercle-bg-vector {
+    left: 878px;
+    top: 428px;
+  }
+
+  .cercle-bg-vector:hover {
+    scale: 1.2;
+  }
+
+  .dollar-bg-vector {
+    display: none;
+    left: 300px;
+    top: 515px;
+  }
+
+  .dollar-bg-vector:hover {
+    scale: 1.2;
+  }
+
+  /* Main section containing the ,About Us and the Project done */
+
+  /* About us Styling */
+
+  .About-us-container p {
+    width: 500px;
+  }
+
+  /* project done styling */
+  .project-done-container p {
+    width: 500px;
+  }
+
+  .project-done {
+    display: flex;
+    gap: 30px;
+    width: 100%;
+    justify-content: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+  .project-done-1 {
+    margin-top: 0;
+  }
+
+  .project-done-2 {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  /* Our Partner section */
+
+  .partner-container {
+    display: none;
+  }
+
+  .partner-blocks {
+    display: flex;
+    flex-direction: row;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    margin-left: 100px;
+  }
+
+  .partner-block-2 {
+    margin-left: 0;
+    width: 900px;
+  }
+
+  .partner-container .section-title {
+    opacity: 0.5;
+  }
+
+  .copyright {
+    color: white;
+  }
+
+  .footer-container {
+    background-color: #272a31;
+    color: white;
+  }
+}
