@@ -1,18 +1,17 @@
 ### Project Name
 
-  # capstone project 1: Home Construction website 
+  # Awesome Books Milestone 1 
   
 
 ## Built With
 
     - HTML
-    - CSS
     - JAVASCRIPT
 
 
 ## Getting Started  
 
-  This project aims at building an online website for a Home care and repair 
+  This project aims at building a basic website that allows users to add/remove books from a list 
 
   Please follow the steps below for getting started and editing the files from your local machine.
 
@@ -37,15 +36,6 @@
 
 
     
-    * Setup for CSS-checker called stylelint
-
-        1 - run  "npm install --save-dev stylelint@13.x stylelint-scss@3.x stylelint-config-standard@21.x stylelint-csstree-validator@1.x"
-
-        2 - Copy ".stylelintrc.json to the root directory of your project."
-        3 - Do not make any changes in config files
-        4 - Run "npx stylelint "**/*.{css,scss}"  to run the CSS linter for a check
-        5 - Fix validation errors.
-    
     * Setup for JavaScript-checker called ESlint
 
         1 - run  "npm install --save-dev eslint@7.x eslint-config-airbnb-base@14.x eslint-plugin-import@2.x babel-eslint@10.x"
@@ -58,47 +48,34 @@
     
 ## Usage
 
-    In the capstone project 1, we will:
+    In the first Milestone , we will:
 
     - Implement the following interactions:
         
-We will build only these 2 pages:
+            Create a collection that keeps a list of books 
 
-    The home page.
-    The about page.
-
-Each of these pages will have versions for 2 different screen sizes:
-
-    Mobile: up to 768px wide.
-    Desktop: 768px or wider.
-
-Interactions
-
-    Links
-        The home page should have a link in the menu to the about page.
-        The logo in the header links to the home page.
-    Mobile menu
-        When the user clicks (or taps) the hamburger button on the header, the mobile menu appears over the page.
-        There are no guidelines for the mobile menu in the docs, but you should implement it so it is consistent with the design (colors, typography, spacings, etc.).
-        The mobile menu should have a close (X) button that closes the menu.
-
-    Dynamic page
-
-        The section "Featured speakers" should be created dynamically in JavaScript.
-        You should use a JavaScript variable with the data about the speakers and use it when the page loads to create the HTML for this section dynamically.
+            Create a function to add a new book to the collection, with title and author.
+            
+            Create a function to remove a book from the collection (hint: you can use the array filter() method).
+            
+            Display all books saved in the collection in the top part of the page.
 
 
 
-## 👤 Author
+## 👤 Massaillon Silue
 
     GitHub: @massaillon
     LinkedIn: Massaillon Silue
     Twitter: Massaillon Silue
 
-
+   👤 Natnael Amare
+          
+    GitHub: nati2323
+    LinkedIn: Natnael Amare
+     
+        
 ## Link to the Live website
    
-    https://massaillon.github.io/home-care/
      
 
 ## 🤝 Contributing
