@@ -1,24 +1,44 @@
-let bookCollection = [
-    {
-      "Title": "Biology",
-      "Author": "Ivan"
+// Declare the constants using the DOM manipulation
+const title = document.getElementById('Book-title');
+const author = document.getElementById('Book-author');
+const addButton = document.getElementById('Add');
 
-    },
-    {
-        "Title": "Computer",
-        "Author": "massa"
-    },
-    {
-        "Title": "Math",
-        "Author": "Natnael"
-    },
-    {
-        "Title": "Art",
-        "Author": "John"
-    },
-    {
-        "Title": "Physics",
-        "Author": "Robert"
-    },
-    
-  ]
+// Create a variable for holding the local data
+let books;
+// Check if the Local storarege is empty
+if (JSON.parse(localStorage.getItem('Book-library')) !== undefined) {
+  books = JSON.parse(localStorage.getItem('Book-library'));
+} else {
+  books = [];
+}
+
+// Create object that will get its value from the form input
+
+// Add a book to the local storage
+// Create a function for adding
+function addBook() {
+  const bookCollection = {
+    ID: Math.floor(Math.random() * 1000000),
+    Title: title.value,
+    Author: author.value,
+  };
+  books.push(bookCollection);
+  // Store the book to the local Storage
+  localStorage.setItem('Book-library', JSON.stringify(books));
+}
+// Add an event listener  for the add action to be performed
+addButton.addEventListener('click', addBook);
+
+// Implement the Booklist section that has to be generated
+// Reference the elements
+const BookList = document.querySelector('.Book-library');
+// loop through the Array to find out the number of books object present
+
+books.forEach((element) => {
+  BookList.innerHTML = `${BookList.innerHTML}<div class="Book-Generate">
+    <p>${element.Title}</p>
+    <p>${element.Author}</p>
+    <button onclick ='removeBook(${element.ID})' type = "button" >Remove</button>
+    <hr>
+    </div>`;
+});
