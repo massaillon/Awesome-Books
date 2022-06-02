@@ -69,12 +69,8 @@ function addBook() {
 });
    // Store the book to the local Storage
   localStorage.setItem('Book-library', JSON.stringify(books));
-  }
 // Add an event listener  for the add action to be performed
  addButton.addEventListener('click', addBook);
-// Implement the Booklist section that has to be generated
-// Reference the elements
- const BookList = document.querySelector('.Book-library');
  function removeBook(bookId){
   const lib = document.getElementById(bookId);
     //lib.remove();
