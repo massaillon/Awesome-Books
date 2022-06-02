@@ -36,18 +36,41 @@ function addBook() {
     Title: title.value,
     Author: author.value,
   };
-  books.push(bookCollection);
+   books.push(bookCollection);
    BookList.innerHTML = `${BookList.innerHTML}<div class="Book-Generate">
       <p>${bookCollection.Title}</p>
       <p>${bookCollection.Author}</p>
       <button id=${bookCollection.ID} onclick ='removeBook(${bookCollection.ID})' type = "button" >Remove</button>
       <hr>
       </div>`;
+ // Store the book to the local Storage
+  localStorage.setItem('Book-library', JSON.stringify(books));
+  }
+// Add an event listener  for the add action to be performed
+  addButton.addEventListener('click', addBook);
+
+// Implement the Booklist section that has to be generated
+// Reference the elements
+  const BookList = document.querySelector('.Book-library');
+  function removeBook(bookId){
+  const lib = document.getElementById(bookId);
+    //lib.remove();
+    books = books.filter((book) => book.ID !== Number(bookId));
+    lib.parentElement.outerHTML='';
+    localStorage.setItem('Book-library', JSON.stringify(books));
+}
+  books.forEach((element) => {
+  BookList.innerHTML = `${BookList.innerHTML}<div class="Book-Generate">
+    <p>${element.Title}</p>
+    <p>${element.Author}</p>
+    <button id=${element.ID} onclick ='removeBook(${element.ID})' type = "button" >Remove</button>
+    <hr>
+    </div>`;
+});
  
   // Store the book to the local Storage
   localStorage.setItem('Book-library', JSON.stringify(books));
-  
-}
+  }
 // Add an event listener  for the add action to be performed
 addButton.addEventListener('click', addBook);
 
