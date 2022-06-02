@@ -67,24 +67,22 @@ function addBook() {
     <hr>
     </div>`;
 });
- 
-  // Store the book to the local Storage
+   // Store the book to the local Storage
   localStorage.setItem('Book-library', JSON.stringify(books));
   }
 // Add an event listener  for the add action to be performed
-addButton.addEventListener('click', addBook);
-
+ addButton.addEventListener('click', addBook);
 // Implement the Booklist section that has to be generated
 // Reference the elements
-const BookList = document.querySelector('.Book-library');
-function removeBook(bookId){
+ const BookList = document.querySelector('.Book-library');
+ function removeBook(bookId){
   const lib = document.getElementById(bookId);
     //lib.remove();
     books = books.filter((book) => book.ID !== Number(bookId));
     lib.parentElement.outerHTML='';
     localStorage.setItem('Book-library', JSON.stringify(books));
 }
-books.forEach((element) => {
+  books.forEach((element) => {
   BookList.innerHTML = `${BookList.innerHTML}<div class="Book-Generate">
     <p>${element.Title}</p>
     <p>${element.Author}</p>
