@@ -53,7 +53,7 @@ function appendBookCard(book) {
 }
 function addBook() {
   const book = new Book(Math.floor(Math.random() * 1000000), title.value, author.value);
-  library.books.push(book);
+  library.addBook(book.ID);
 
   appendBookCard(book);
   // Store the book to the local Storage
