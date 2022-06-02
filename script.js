@@ -4,27 +4,23 @@ const author = document.getElementById('Book-author');
 const addButton = document.getElementById('Add');
 
 // Create a variable for holding the local data
-let books;
+let books=JSON.parse(localStorage.getItem('Book-library'));
 // Check if the Local storarege is empty
-if (JSON.parse(localStorage.getItem('Book-library')) ) {
-  books = JSON.parse(localStorage.getItem('Book-library'));
-} else {
+if (!books) {
   books = [
     { 
       ID:1, 
       Title: "400 Days", 
-      Author: "Chetan Bhagat",
-
-    ID:2, 
+      Author: "Chetan Bhagat"},
+      {ID:2, 
     Title: "The Ickabog", 
-    Author: "J.K Rowling",
-
-    ID:3, 
+    Author: "J.K Rowling"},
+    {ID:3, 
     Title: "The Christmas Pig",
     Author: "J.K Rowling",
     },
   ];
-}
+} 
 
 // Create object that will get its value from the form input
 
@@ -52,7 +48,7 @@ function addBook() {
 // Implement the Booklist section that has to be generated
 // Reference the elements
   const BookList = document.querySelector('.Book-library');
-  function removeBook(bookId){
+  function removeBook(bookId) {
   const lib = document.getElementById(bookId);
     //lib.remove();
     books = books.filter((book) => book.ID !== Number(bookId));
@@ -67,22 +63,4 @@ function addBook() {
     <hr>
     </div>`;
 });
-   // Store the book to the local Storage
-  localStorage.setItem('Book-library', JSON.stringify(books));
-// Add an event listener  for the add action to be performed
- addButton.addEventListener('click', addBook);
- function removeBook(bookId){
-  const lib = document.getElementById(bookId);
-    //lib.remove();
-    books = books.filter((book) => book.ID !== Number(bookId));
-    lib.parentElement.outerHTML='';
-    localStorage.setItem('Book-library', JSON.stringify(books));
-}
-  books.forEach((element) => {
-  BookList.innerHTML = `${BookList.innerHTML}<div class="Book-Generate">
-    <p>${element.Title}</p>
-    <p>${element.Author}</p>
-    <button id=${element.ID} onclick ='removeBook(${element.ID})' type = "button" >Remove</button>
-    <hr>
-    </div>`;
-});
+   
