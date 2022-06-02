@@ -18,23 +18,26 @@ function Book(id, title, author) {
   this.Author = author;
 }
 const library = new Library();
-library.books = [
-  {
-    ID: 1,
-    Title: '400 Days',
-    Author: 'Chetan Bhagat',
-  },
-  {
-    ID: 2,
-    Title: 'The Ickabog',
-    Author: 'J.K Rowling',
-  },
-  {
-    ID: 3,
-    Title: 'The Christmas Pig',
-    Author: 'J.K Rowling',
-  },
-];
+library.books = JSON.parse(localStorage.getItem('Book-library'));
+if (!library.books) {
+  library.books = [
+    {
+      ID: 1,
+      Title: '400 Days',
+      Author: 'Chetan Bhagat',
+    },
+    {
+      ID: 2,
+      Title: 'The Ickabog',
+      Author: 'J.K Rowling',
+    },
+    {
+      ID: 3,
+      Title: 'The Christmas Pig',
+      Author: 'J.K Rowling',
+    },
+  ];
+}
 
 const title = document.getElementById('Book-title');
 const author = document.getElementById('Book-author');
