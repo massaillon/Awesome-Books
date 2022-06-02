@@ -1,40 +1,71 @@
-/* Constants declarations for the Mobile menu */
-const hamburger = document.querySelector('.hamburger');
-const navMenu = document.querySelector('.nav-menu');
+// Declare the constants using the DOM manipulation
+const title = document.getElementById('Book-title');
+const author = document.getElementById('Book-author');
+const addButton = document.getElementById('Add');
 
-function mobileMenu() {
-  /* Open the menu and and change the Hamburger to a X on click */
-  if (navMenu.classList.contains('hide')) {
-    navMenu.classList.remove('hide');
-    hamburger.classList.toggle('active');
-  } else {
-    navMenu.classList.add('hide');
-    hamburger.classList.toggle('active');
-  }
+// Create a variable for holding the local data
+let books = JSON.parse(localStorage.getItem('Book-library'));
+// Check if the Local storarege is empty
+if (!books) {
+  books = [
+    {
+      ID: 1,
+      Title: '400 Days',
+      Author: 'Chetan Bhagat',
+    },
+    {
+      ID: 2,
+      Title: 'The Ickabog',
+      Author: 'J.K Rowling',
+    },
+    {
+      ID: 3,
+      Title: 'The Christmas Pig',
+      Author: 'J.K Rowling',
+    },
+  ];
 }
-hamburger.addEventListener('click', mobileMenu);
-/* For closing navigation on the click of each link */
-document.querySelectorAll('.nav-link').forEach((n) => n.addEventListener('click', () => {
-  hamburger.classList.remove('active');
-  navMenu.classList.add('hide');
-  hamburger.toggle('bar active');
-}));
 
-/* Dynamic Feature speaker */
-/* Constants declarations for Dynamic Feature speaker */
-const more = document.querySelector('.featured-speaker-more-button');
-const dynamicSpeaker = document.querySelector('.featured-speaker-stack-container-2');
+// Create object that will get its value from the form input
 
-/* Function for making dynamic the feature section */
-
-function moreFeature() {
-  /* Open the the remaining featured speaker on click */
-  if (dynamicSpeaker.classList.contains('hide')) {
-    dynamicSpeaker.classList.remove('hide');
-  } else {
-    dynamicSpeaker.classList.add('hide');
-  }
+// Add a book to the local storage
+// Create a function for adding
+function addBook() {
+  const bookCollection = {
+    ID: Math.floor(Math.random() * 1000000),
+    Title: title.value,
+    Author: author.value,
+  };
+  books.push(bookCollection);
+  const BookList = document.querySelector('.Book-library');
+  BookList.innerHTML = `${BookList.innerHTML}<div class="Book-Generate">
+      <p>${bookCollection.Title}</p>
+      <p>${bookCollection.Author}</p>
+      <button id=${bookCollection.ID} onclick ='removeBook(${bookCollection.ID})' type = "button" >Remove</button>
+      <hr>
+      </div>`;
+  // Store the book to the local Storage
+  localStorage.setItem('Book-library', JSON.stringify(books));
 }
-/* Add an event Listener for the action to be performed */
+// Add an event listener  for the add action to be performed
+addButton.addEventListener('click', addBook);
 
-more.addEventListener('click', moreFeature);
+// Implement the Booklist section that has to be generated
+// Reference the elements
+function removeBook(bookId) {
+  const lib = document.getElementById(bookId);
+  // lib.remove();
+  books = books.filter((book) => book.ID !== Number(bookId));
+  lib.parentElement.outerHTML = '';
+  localStorage.setItem('Book-library', JSON.stringify(books));
+}
+books.forEach((element) => {
+  const BookList = document.querySelector('.Book-library');
+  BookList.innerHTML = `${BookList.innerHTML}<div class="Book-Generate">
+    <p>${element.Title}</p>
+    <p>${element.Author}</p>
+    <button id=${element.ID} onclick ='removeBook(${element.ID})' type = "button" >Remove</button>
+    <hr>
+    </div>`;
+  document.getElementById(element.ID).addEventListener('click', removeBook);
+});
