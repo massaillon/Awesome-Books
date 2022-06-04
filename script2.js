@@ -17,7 +17,7 @@ function Book(id, title, author) {
   this.Title = title;
   this.Author = author;
 }
- /* eslint-disable */
+/* eslint-disable */
 const library = new Library();
 library.books = JSON.parse(localStorage.getItem('Book-library'));
 if (!library.books) {
