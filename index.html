@@ -1,35 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Awesome Books</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css" type="text/css">
+  <title>Awesome Books</title>
 </head>
 <body>
-    <!-- the Header section part-->
-    <header>
-        <h1>Awesome Books</h1>
-    </header>
-    <!-- the main Part-->
-    <main>
-        <!--The section for the JavaScript generated part-->
-     <section class="Book-library">   
-    
-    </section>
-    
-    <!-- The section for the form -->
-    <section>
-       
-<form>
-    <input id="Book-title" class="form-element" type="text" placeholder="Enter Book name" name="book_title" value=""
-    maxlength="100" required><br><br>
-    <input id="Book-author" class="form-element" type="text" placeholder="Enter the author" name="book_author" value=""
-    maxlength="100" required><br><br>
-    <button type="button" id="Add" class="add">Add</button>
-</form>
-</section>
-</main>
-<script src="script.js"></script>
+  <header>
+    <div class="header">
+      <h2 class="header-title">Awesome Books</h2>
+      <nav>
+        <ul class="nav-list">
+          <li><a href="#" id="navList" onclick="displaySection('Book-library')">List</a></li>
+          <li><a href="#" id="navNew" onclick="displaySection('form')">Add New</a></li>
+          <li><a href="#" id="navContact" onclick="displaySection('contact')">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+    <p id="date" class="date"></p>
+  </header>
+
+  <main>
+
+    <div>
+      <h1 id="title" class="title">All Awesome Books</h1>
+
+    </div>
+
+    <div id="Book-library" class="Book-library">
+     
+    </div>
+
+    <div id="form" class="form">
+      <form action="#" class="input-form" method="post">
+        <input id="Book-title" type="text" placeholder="Enter Book Title">
+        <input id="Book-author" type="text" placeholder="Enter Author Name">
+        <button id="Add" type="button">Add</button>
+      </form>
+    </div>
+
+    <div id="contact" class="contact">
+      <p>
+        If you have any questions or you just want to say "Hello".
+        You can reach us to.
+      </p>
+      <ul>
+        <li>Our email: <a href="#">mail@mail.com</a></li>
+        <li>Our twitter: <a href="#">@awesomeBooks</a></li>
+        <li>Our github: <a href="#">@awesomeBooks</a></li>
+      </ul>
+    </div>
+
+  </main>
+  <footer class="footer">
+    <h3>Copyright &copy;</h3>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/luxon@2.0.2/build/global/luxon.min.js"></script>
+  <script src="script2.js"></script>
 </body>
 </html>
