@@ -1,3 +1,4 @@
+ /* eslint-disable */
 // Declare the constants using the DOM manipulation
 const title = document.getElementById('Book-title');
 const author = document.getElementById('Book-author');
