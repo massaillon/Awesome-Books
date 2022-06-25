@@ -7,6 +7,8 @@
 
     - HTML
     - JAVASCRIPT
+    - CSS
+    - Webpack
 
 
 ## Getting Started  
