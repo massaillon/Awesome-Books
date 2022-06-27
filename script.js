@@ -1,10 +1,11 @@
+/* eslint-disable */
 // Declare the constants using the DOM manipulation
 const title = document.getElementById('Book-title');
 const author = document.getElementById('Book-author');
 const addButton = document.getElementById('Add');
 
 // Create a variable for holding the local data
-let books = JSON.parse(localStorage.getItem('Book-library'));
+let bosok = JSON.parse(localStorage.getItem('Book-library'));
 // Check if the Local storarege is empty
 if (!books) {
   books = [
